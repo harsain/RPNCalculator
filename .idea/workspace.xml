@@ -4,24 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/com/harsain/RPNCalculator/Undo.java" line="26" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abc144d2-cb93-4a03-88be-41b3858c095a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/harsain/RPNCalculator/Add.class" afterPath="$PROJECT_DIR$/target/classes/com/harsain/RPNCalculator/Add.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/harsain/RPNCalculator/App.class" afterPath="$PROJECT_DIR$/target/classes/com/harsain/RPNCalculator/App.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/harsain/RPNCalculator/Calculator.class" afterPath="$PROJECT_DIR$/target/classes/com/harsain/RPNCalculator/Calculator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/harsain/RPNCalculator/Expression.class" afterPath="$PROJECT_DIR$/target/classes/com/harsain/RPNCalculator/Expression.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/harsain/RPNCalculator/ExpressionUtil$1.class" afterPath="$PROJECT_DIR$/target/classes/com/harsain/RPNCalculator/ExpressionUtil$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/harsain/RPNCalculator/ExpressionUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/harsain/RPNCalculator/ExpressionUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/harsain/RPNCalculator/Operand.class" afterPath="$PROJECT_DIR$/target/classes/com/harsain/RPNCalculator/Operand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/harsain/RPNCalculator/Add.java" afterPath="$PROJECT_DIR$/src/main/java/com/harsain/RPNCalculator/Add.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/harsain/RPNCalculator/App.java" afterPath="$PROJECT_DIR$/src/main/java/com/harsain/RPNCalculator/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/harsain/RPNCalculator/Calculator.java" afterPath="$PROJECT_DIR$/src/main/java/com/harsain/RPNCalculator/Calculator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/harsain/RPNCalculator/Expression.java" afterPath="$PROJECT_DIR$/src/main/java/com/harsain/RPNCalculator/Expression.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/harsain/RPNCalculator/ExpressionUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/harsain/RPNCalculator/ExpressionUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/harsain/RPNCalculator/Operand.java" afterPath="$PROJECT_DIR$/src/main/java/com/harsain/RPNCalculator/Operand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/harsain/RPNCalculator/Undo.java" afterPath="$PROJECT_DIR$/src/main/java/com/harsain/RPNCalculator/Undo.java" />
-    </list>
+    <list default="true" id="abc144d2-cb93-4a03-88be-41b3858c095a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -539,12 +522,20 @@
       <workItem from="1500807279421" duration="54000" />
       <workItem from="1500807387856" duration="55000" />
       <workItem from="1500807500224" duration="186000" />
-      <workItem from="1500807759127" duration="5958000" />
+      <workItem from="1500807759127" duration="6013000" />
     </task>
+    <task id="LOCAL-00001" summary="Add functionality added">
+      <created>1500814226976</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1500814226977</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25555000" />
+    <option name="totallyTimeSpent" value="25610000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -602,7 +593,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Add Undo feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Undo feature" />
+    <MESSAGE value="Add functionality added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add functionality added" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
