@@ -1,5 +1,7 @@
 package com.harsain.RPNCalculator;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -19,6 +21,10 @@ public class App
     {
         try {
             runCalculator(new Scanner(System.in));
+//            System.out.println((double)Math.round(1 * 100000d) / 100000d);
+//
+//            BigDecimal bd = new BigDecimal(1, MathContext.DECIMAL64).setScale(15);
+//            System.out.println(bd.floatValue());
         } catch (Exception exp) {
             System.out.println("Oops, an error occurred, please try re-run the application");
         }

@@ -6,6 +6,7 @@ import com.harsain.RPNCalculator.Expression.Expression;
 import com.harsain.RPNCalculator.Expression.Operand;
 
 import javax.sound.midi.Soundbank;
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Stack;
@@ -24,7 +25,7 @@ public class Calculator {
         Integer lastIndex = -1;
         for (String expression: expressionArr) {
             lastIndex = indexOfOperator(input, expression, lastIndex);
-            Double value = tryParseDouble(expression);
+            BigDecimal value = tryParseString(expression);
             if (value != null) {
                 // it's a digit
                 valueStack.push( new Operand(value));
@@ -35,8 +36,8 @@ public class Calculator {
                 try {
                     operator = ExpressionUtil.getOperator(expression, valueStack, instructionStack);
                     if (operator != null) {
-                        List<Double> results = operator.interpret();
-                        for (Double result : results) {
+                        List<BigDecimal> results = operator.interpret();
+                        for (BigDecimal result : results) {
                             valueStack.push(new Operand(result));
                         }
                     }
@@ -55,9 +56,9 @@ public class Calculator {
         return input.indexOf(elem, ++lastIndex);
     }
 
-    private Double tryParseDouble(String operandString) {
+    private BigDecimal tryParseString(String operandString) {
         try {
-            return Double.parseDouble(operandString);
+            return new BigDecimal(Double.parseDouble(operandString));
         } catch (NumberFormatException numEx) {
             return null;
         }

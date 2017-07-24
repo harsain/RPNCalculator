@@ -3,6 +3,7 @@ package com.harsain.RPNCalculator.Expression;
 import com.harsain.RPNCalculator.Exception.RPNCalculatorInsufficientOperands;
 import com.harsain.RPNCalculator.OperatorEnum;
 
+import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
@@ -23,8 +24,8 @@ public class Add implements Expression{
         }
     }
 
-    public List<Double> interpret() {
-        return Collections.singletonList(leftOperand.interpret().get(0) + rightOperand.interpret().get(0));
+    public List<BigDecimal> interpret() {
+        return Collections.singletonList(leftOperand.interpret().get(0).add(rightOperand.interpret().get(0)));
     }
 
     public List<Expression> getOperands() {

@@ -3,6 +3,7 @@ package com.harsain.RPNCalculator.Expression;
 import com.harsain.RPNCalculator.Exception.RPNCalculatorInsufficientOperands;
 import com.harsain.RPNCalculator.OperatorEnum;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -23,8 +24,8 @@ public class Sqrt implements Expression {
     }
 
     @Override
-    public List<Double> interpret() {
-        return Collections.singletonList(Math.sqrt(this.operand.interpret().get(0)));
+    public List<BigDecimal> interpret() {
+        return Collections.singletonList(new BigDecimal(Math.sqrt(this.operand.interpret().get(0).doubleValue())).setScale(15));
     }
 
     @Override

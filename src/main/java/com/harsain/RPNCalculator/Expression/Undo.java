@@ -3,6 +3,7 @@ package com.harsain.RPNCalculator.Expression;
 import com.harsain.RPNCalculator.Instruction;
 import com.harsain.RPNCalculator.OperatorEnum;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.Stack;
 
 public class Undo implements Expression {
 
-    private List<Double> previousOperands = new ArrayList<Double>();
+    private List<BigDecimal> previousOperands = new ArrayList<BigDecimal>();
 
     public Undo(Stack<Expression> valuesStack, Instruction lastExpression) {
         if (lastExpression != null) {
@@ -28,7 +29,7 @@ public class Undo implements Expression {
 
     }
 
-    public List<Double> interpret() {
+    public List<BigDecimal> interpret() {
         return this.previousOperands;
     }
 

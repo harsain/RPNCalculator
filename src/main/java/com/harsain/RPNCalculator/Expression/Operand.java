@@ -2,18 +2,19 @@ package com.harsain.RPNCalculator.Expression;
 
 import com.harsain.RPNCalculator.OperatorEnum;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 public class Operand implements Expression {
-    private final Double num;
+    private final BigDecimal num;
 
-    public Operand(Double num) {
+    public Operand(BigDecimal num) {
         this.num = num;
     }
 
-    public List<Double> interpret() {
+    public List<BigDecimal> interpret() {
         return Collections.singletonList(this.num);
     }
 
