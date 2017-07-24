@@ -23,7 +23,7 @@ public class AddTest extends TestCase{
             add = new Add(values);
             List<BigDecimal> result = add.interpret();
 
-            assertEquals(2.1, result.get(0));
+            assertEquals(2.1, result.get(0).doubleValue());
 
         } catch (RPNCalculatorInsufficientOperands insufficientOperands) {
             insufficientOperands.printStackTrace();

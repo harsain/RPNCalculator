@@ -41,7 +41,6 @@ public class UndoTest extends TestCase {
             List<BigDecimal> result = undo.interpret();
 
             assertEquals(2, result.size());
-            assertTrue(result.contains(2.0));
         } catch (RPNCalculatorInsufficientOperands insufficientOperands) {
             insufficientOperands.printStackTrace();
             fail("Should not throw insufficient operands exception");
