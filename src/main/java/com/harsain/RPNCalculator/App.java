@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class App 
 {
-    private static Scanner input = new Scanner(System.in);
+//    private static Scanner input = new Scanner(System.in);
 
     /**
      * the main entry point for the application
@@ -18,7 +18,7 @@ public class App
     public static void main( String[] args )
     {
         try {
-            runCalculator();
+            runCalculator(new Scanner(System.in));
         } catch (Exception exp) {
             System.out.println("Oops, an error occurred, please try re-run the application");
         }
@@ -28,24 +28,24 @@ public class App
      * Starts the calculator
      * @throws Exception
      */
-    private static void runCalculator() throws Exception {
+    public static void runCalculator(Scanner scanner) throws Exception {
         System.out.println("Welcome to the RPN Calculator Application");
         System.out.println("Enter your expression or 'EXIT' to quit");
         System.out.println("-------------------------------------------------------------------------");
-        System.out.printf("Available commands: %s\n", Arrays.asList(OperatorEnum.values()));
-        expressionInput();
+        System.out.printf("Available commands: %s\n", Arrays.asList(OperatorEnum.getOperators()));
+        expressionInput(scanner);
     }
 
     /**
      *
      */
-    private static void expressionInput() {
+    private static void expressionInput(Scanner scanner) {
         Calculator calculator = new Calculator();
         String userInput = "";
         while (!userInput.equalsIgnoreCase("EXIT")) {
             System.out.println("Enter next input: ");
 
-            userInput = input.nextLine();
+            userInput = scanner.nextLine();
             calculator.eval(userInput);
         }
     }

@@ -1,11 +1,15 @@
 package com.harsain.RPNCalculator;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public enum OperatorEnum {
-    ADD("+"), SUBTRACT("-"), MULTIPLY("*"), DIVIDE("/"), SQRT("sqrt"), UNDO("undo"), CLEAR("clear");
+    ADD("+", "-", 2),
+    SUBTRACT("-", "+", 2),
+    MULTIPLY("*", "/", 2),
+    DIVIDE("/", "*", 2),
+    SQRT("sqrt", null, 1),
+    UNDO("undo", null, 0),
+    CLEAR("clear", null, 0);
 
     private final static Set<String> values = new HashSet<String>(OperatorEnum.values().length);
     private final static Set<String> valuesExp = new HashSet<String>(OperatorEnum.values().length);
@@ -20,8 +24,26 @@ public enum OperatorEnum {
     }
 
     private String operator;
+    private String reverseOperator;
+    private int noOfOperands;
 
-    OperatorEnum(String operator) { this.operator = operator; }
+    OperatorEnum(String operator, String reverseOperand, int noOfOperands) {
+        this.operator = operator;
+        this.reverseOperator = reverseOperand;
+        this.noOfOperands = noOfOperands;
+    }
+
+    public String getOperator() {
+        return operator;
+    }
+
+    public String getReverseOperator() {
+        return reverseOperator;
+    }
+
+    public int getNoOfOperands() {
+        return noOfOperands;
+    }
 
     public static OperatorEnum getOperator(String stringOperand) {
         return OperatorEnum.valueOf(stringOperand);
@@ -29,6 +51,13 @@ public enum OperatorEnum {
 
     public static boolean containsOperator(String operator) {
         return valuesExp.contains(operator);
+    }
+
+    public static List<String> getOperators() {
+        List<String> operatorArr = new ArrayList<>();
+        lookup.values().stream().forEach(val -> operatorArr.add(val.operator));
+
+        return operatorArr;
     }
 
     public static OperatorEnum get(String abbreviation) {
