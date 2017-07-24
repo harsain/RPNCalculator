@@ -3,6 +3,7 @@ package com.harsain.RPNCalculator;
 import java.util.*;
 
 public enum OperatorEnum {
+    // all the operators available in the application
     ADD("+", "-", 2),
     SUBTRACT("-", "+", 2),
     MULTIPLY("*", "/", 2),
@@ -53,6 +54,10 @@ public enum OperatorEnum {
         return valuesExp.contains(operator);
     }
 
+    /**
+     * returns all the operators available
+     * @return
+     */
     public static List<String> getOperators() {
         List<String> operatorArr = new ArrayList<>();
         lookup.values().stream().forEach(val -> operatorArr.add(val.operator));
@@ -60,6 +65,11 @@ public enum OperatorEnum {
         return operatorArr;
     }
 
+    /**
+     * return operator based on the operator abbreviation
+     * @param abbreviation
+     * @return
+     */
     public static OperatorEnum get(String abbreviation) {
         return lookup.get(abbreviation);
     }

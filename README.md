@@ -1,6 +1,6 @@
 # Reverse Polish Notation Calculator
 
-##Design Pattern
+## Design Pattern
 
 Using **Interpreter Pattern**
 
@@ -37,7 +37,7 @@ I have used Maven to setup the project.
 
 `mvn -e clean test`
 
-###Reports and jar
+### Reports and jar
 All test reports and test coverages will be available following path under project
 `./target`
 
