@@ -1,6 +1,7 @@
 package com.harsain.RPNCalculator;
 
 import com.harsain.RPNCalculator.Exception.CalculatorException;
+import com.harsain.RPNCalculator.Exception.ExitException;
 import com.harsain.RPNCalculator.Exception.RPNCalculatorInsufficientOperands;
 import com.harsain.RPNCalculator.Expression.Expression;
 import com.harsain.RPNCalculator.Expression.Operand;
@@ -24,7 +25,7 @@ public class Calculator {
      * this method evaluates the user input
      * @param input
      */
-    public void eval(String input) {
+    public void eval(String input) throws ExitException {
 
         // defines the decimal format for printing the result
         DecimalFormat decimalFormat = new DecimalFormat("#.000000000000000");
@@ -48,6 +49,8 @@ public class Calculator {
                 valueStack.push( new Operand(value));
                 instructionStack.push(null);
                 ExpressionUtil.clearLastInteraction();
+            } else if (isExistExpression(expression)) {
+                throw new ExitException("Exit");
             } else if (ExpressionUtil.isOperator(expression) ) {
                 // it's an operator
                 Expression operator = null;
@@ -74,6 +77,10 @@ public class Calculator {
         }
         // print the stack at the end
         this.printValueStack();
+    }
+
+    private boolean isExistExpression(String expression) {
+        return "exit".equalsIgnoreCase(expression.trim());
     }
 
     /**

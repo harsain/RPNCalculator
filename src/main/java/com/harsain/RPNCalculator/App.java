@@ -1,15 +1,17 @@
 package com.harsain.RPNCalculator;
 
+import com.harsain.RPNCalculator.Exception.ExitException;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * App
+ * Reverse Polish Notation Application
  */
 public class App 
 {
@@ -46,13 +48,22 @@ public class App
      */
     private static void expressionInput(Scanner scanner) {
         Calculator calculator = new Calculator();
-        String userInput = "";
+        String userInput = scanner.nextLine();
         while (!userInput.equalsIgnoreCase("EXIT")) {
             System.out.println("Enter next input: ");
 
-            userInput = scanner.nextLine();
             log.info("user entered: " + userInput);
-            calculator.eval(userInput);
+            try {
+                // only process if not empty
+                if (!userInput.trim().isEmpty()) {
+                    calculator.eval(userInput);
+                }
+                userInput = scanner.nextLine();
+            } catch (ExitException e) {
+                System.exit(1);
+            } catch (NoSuchElementException noSuchElemExcep) {
+                log.warning(noSuchElemExcep.getMessage());
+            }
         }
     }
 }

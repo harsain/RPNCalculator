@@ -2,3 +2,5 @@
 /.idea/
 .idea/uiDesigner.xml
 .idea/workspace.xml
+./RPNCalculator.iml
+target/

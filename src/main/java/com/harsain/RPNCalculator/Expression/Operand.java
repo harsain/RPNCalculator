@@ -24,7 +24,7 @@ public class Operand implements Expression {
     }
 
     @Override
-    public OperatorEnum getOperand() {
+    public OperatorEnum getOperator() {
         return null;
     }
 }

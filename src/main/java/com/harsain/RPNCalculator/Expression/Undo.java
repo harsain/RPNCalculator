@@ -18,17 +18,25 @@ public class Undo implements Expression {
             if (lastExpression.getOperand().equals(OperatorEnum.UNDO)) {
                 this.previousOperands.clear();
             } else {
+                // if last expression was not undo then just clear 1 last operator from the stack
+                // & push last expression's operators
                 valuesStack.pop();
                 for (Expression operand : lastExpression.getExpression().getOperands()) {
                     this.previousOperands.add(operand.interpret().get(0));
                 }
             }
         } else {
+            // if the lastExpression was null,
+            // that means last operation was push operator to the stack
             valuesStack.pop();
         }
 
     }
 
+    /**
+     * Perform the actual undo action
+     * @return
+     */
     public List<BigDecimal> interpret() {
         return this.previousOperands;
     }
@@ -39,7 +47,7 @@ public class Undo implements Expression {
     }
 
     @Override
-    public OperatorEnum getOperand() {
+    public OperatorEnum getOperator() {
         return OperatorEnum.UNDO;
     }
 }

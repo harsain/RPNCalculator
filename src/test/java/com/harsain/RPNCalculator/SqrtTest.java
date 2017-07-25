@@ -38,7 +38,7 @@ public class SqrtTest extends TestCase {
             fail("Should have caught exception");
         } catch (RPNCalculatorInsufficientOperands insufficientOperands) {
             insufficientOperands.printStackTrace();
-            assertEquals("SQRT requires1 operands", insufficientOperands.getMessage());
+            assertEquals("SQRT requires 1 operands", insufficientOperands.getMessage());
         }
     }
 }

@@ -38,7 +38,7 @@ public class DivideTest extends TestCase {
             fail("Should have caught the exception");
         } catch (RPNCalculatorInsufficientOperands insufficientOperands) {
             insufficientOperands.printStackTrace();
-            assertEquals("DIVIDE requires at least 2 operands", insufficientOperands.getMessage());
+            assertEquals("DIVIDE requires 2 operands", insufficientOperands.getMessage());
         }
     }
 

@@ -16,14 +16,19 @@ public class Sqrt implements Expression {
     private final Expression operand;
 
     public Sqrt(Stack<Expression> valuesStack) throws RPNCalculatorInsufficientOperands {
+        // check for the no of operators, if not ok return exception
         if (valuesStack.size() < OperatorEnum.SQRT.getNoOfOperands()) {
-            throw new RPNCalculatorInsufficientOperands(OperatorEnum.SQRT.name() + " requires" + OperatorEnum.SQRT.getNoOfOperands() + " operands");
+            throw new RPNCalculatorInsufficientOperands(OperatorEnum.SQRT.name() + " requires " + OperatorEnum.SQRT.getNoOfOperands() + " operands");
         } else {
+            // assign the operand from the stack
             this.operand = valuesStack.pop();
         }
     }
 
-    @Override
+    /**
+     * Perform the actual Sqrt action
+     * @return
+     */
     public List<BigDecimal> interpret() {
         return Collections.singletonList(new BigDecimal(Math.sqrt(this.operand.interpret().get(0).doubleValue())).setScale(15));
     }
@@ -34,7 +39,7 @@ public class Sqrt implements Expression {
     }
 
     @Override
-    public OperatorEnum getOperand() {
+    public OperatorEnum getOperator() {
         return OperatorEnum.SQRT;
     }
 }

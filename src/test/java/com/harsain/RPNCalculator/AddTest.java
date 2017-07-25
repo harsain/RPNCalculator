@@ -42,7 +42,7 @@ public class AddTest extends TestCase{
             fail("Should have thrown insufficient number of operands exception");
         } catch (RPNCalculatorInsufficientOperands insufficientOperands) {
             insufficientOperands.printStackTrace();
-            assertEquals("ADD requires at least 2 operands", insufficientOperands.getMessage());
+            assertEquals("ADD requires 2 operands", insufficientOperands.getMessage());
         }
     }
 }

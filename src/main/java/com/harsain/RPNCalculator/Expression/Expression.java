@@ -11,5 +11,5 @@ public interface Expression {
 
     Collection<? extends Expression> getOperands();
 
-    OperatorEnum getOperand();
+    OperatorEnum getOperator();
 }

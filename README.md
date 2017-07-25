@@ -38,12 +38,21 @@ I have used Maven to setup the project.
 `mvn -e clean test`
 
 ### Reports and jar
+To generate **jar** we will need to run the above mentioned Maven commands.
+The **jar** will be created under a new directory `target/` under the project root.
 All test reports and test coverages will be available following path under project
-`./target`
+`target/`
 
 The _jar_ will be generated under **/target** path:
-`/target/RPNCalculator-1.0-SNAPSHOT.jar`
+`<PROJECT_PATH>/target/RPNCalculator-1.0-SNAPSHOT.jar`
 
 ### Run the jar
+- Assumption that we are in the `<PROJECT_ROOT>` path. 
 
 `java -cp target/RPNCalculator-1.0-SNAPSHOT.jar com.harsain.RPNCalculator.App`
+
+## Constraints
+
+### Java Version
+
+This application requires Java version of **1.8** and above, as I am using Java streams API

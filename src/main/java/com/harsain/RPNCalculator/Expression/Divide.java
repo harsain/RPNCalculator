@@ -17,8 +17,9 @@ public class Divide implements Expression {
     private final Expression rightOperand;
 
     public Divide(Stack<Expression> valuesStack) throws RPNCalculatorInsufficientOperands {
-        if (valuesStack.size() < 2) {
-            throw new RPNCalculatorInsufficientOperands(OperatorEnum.DIVIDE.name() + " requires at least 2 operands");
+        // check for the no of operators, if not ok return exception
+        if (valuesStack.size() < OperatorEnum.DIVIDE.getNoOfOperands()) {
+            throw new RPNCalculatorInsufficientOperands(OperatorEnum.DIVIDE.name() + " requires " + OperatorEnum.DIVIDE.getNoOfOperands() + " operands");
         } else {
             this.rightOperand = valuesStack.pop();
             this.leftOperand = valuesStack.pop();
@@ -32,10 +33,10 @@ public class Divide implements Expression {
 
     @Override
     public Collection<? extends Expression> getOperands() {
-        return Stream.of(this.rightOperand, this.leftOperand).collect(Collectors.toList());
+        return Stream.of(this.leftOperand, this.rightOperand).collect(Collectors.toList());
     }
 
-    public OperatorEnum getOperand() {
+    public OperatorEnum getOperator() {
         return OperatorEnum.DIVIDE;
     }
 }

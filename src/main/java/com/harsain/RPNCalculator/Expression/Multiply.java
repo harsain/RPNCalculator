@@ -17,9 +17,12 @@ public class Multiply implements Expression {
     private final Expression rightOperand;
 
     public Multiply(Stack<Expression> valuesStack) throws RPNCalculatorInsufficientOperands {
+
+        // check for the no of operators, if not ok return exception
         if (valuesStack.size() < OperatorEnum.MULTIPLY.getNoOfOperands()) {
             throw new RPNCalculatorInsufficientOperands(OperatorEnum.MULTIPLY.name() + " requires" + OperatorEnum.MULTIPLY.getNoOfOperands() + " operands");
         } else {
+            // assign the operands for operation from the stack
             this.leftOperand = valuesStack.pop();
             this.rightOperand = valuesStack.pop();
         }
@@ -35,7 +38,7 @@ public class Multiply implements Expression {
         return Stream.of(this.rightOperand, this.leftOperand).collect(Collectors.toList());
     }
 
-    public OperatorEnum getOperand() {
+    public OperatorEnum getOperator() {
         return OperatorEnum.MULTIPLY;
     }
 }

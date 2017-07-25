@@ -17,15 +17,20 @@ public class Substract implements Expression {
     private final Expression rightOperand;
 
     public Substract(Stack<Expression> valuesStack) throws RPNCalculatorInsufficientOperands {
-        if (valuesStack.size() < 2) {
-            throw new RPNCalculatorInsufficientOperands(OperatorEnum.SUBTRACT.name() + " requires at least 2 operands");
+        // check for the no of operators, if not ok return exception
+        if (valuesStack.size() < OperatorEnum.SUBTRACT.getNoOfOperands()) {
+            throw new RPNCalculatorInsufficientOperands(OperatorEnum.SUBTRACT.name() + " requires " + OperatorEnum.SUBTRACT.getNoOfOperands() + " operands");
         } else {
+            // assign the operands from the stack
             this.rightOperand = valuesStack.pop();
             this.leftOperand = valuesStack.pop();
         }
     }
 
-    @Override
+    /**
+     * Perform the actual Subtract action
+     * @return
+     */
     public List<BigDecimal> interpret() {
         return Collections.singletonList(this.leftOperand.interpret().get(0).subtract(this.rightOperand.interpret().get(0)));
     }
@@ -35,7 +40,7 @@ public class Substract implements Expression {
         return Stream.of(this.rightOperand, this.leftOperand).collect(Collectors.toList());
     }
 
-    public OperatorEnum getOperand() {
+    public OperatorEnum getOperator() {
         return OperatorEnum.SUBTRACT;
     }
 }

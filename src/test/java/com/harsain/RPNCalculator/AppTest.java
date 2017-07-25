@@ -1,11 +1,11 @@
 package com.harsain.RPNCalculator;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
-
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
+import junit.framework.TestCase;
 
 /**
  * Unit test for simple App.
@@ -25,6 +25,7 @@ public class AppTest extends TestCase {
     }
 
     public void tearDown() throws Exception {
+        super.tearDown();
         PrintStream originalOut = System.out;
         System.setOut(originalOut);
     }
@@ -35,24 +36,19 @@ public class AppTest extends TestCase {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        App tempApp = new App();
 
         try {
             String input = "1 1\nexit\n";
-            tempApp.runCalculator(new Scanner(input));
-            assertEquals("Welcome to the RPN Calculator Application\n" +
-                    "Enter your expression or 'EXIT' to quit\n" +
-                    "-------------------------------------------------------------------------\n" +
-                    "Available commands: [[undo, sqrt, clear, *, +, -, /]]\n" +
-                    "Enter next input: \n" +
-                    "Stack:\n" +
-                    "1.0000000000 1.0000000000 \n" +
-                    "Enter next input: \n" +
-                    "Stack:\n" +
-                    "1.0000000000 1.0000000000 \n", os.toString());
+            App.runCalculator(new Scanner(input));
+            assertEquals("Welcome to the RPN Calculator Application\n"
+                + "Enter your expression or 'EXIT' to quit\n"
+                + "-----------------------------------------------------\n"
+                + "Available commands: [[undo, sqrt, clear, *, +, -, /]]\n"
+                + "Enter next input: \n"
+                + "Stack:\n"
+                + "1.0000000000 1.0000000000 \n", os.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }

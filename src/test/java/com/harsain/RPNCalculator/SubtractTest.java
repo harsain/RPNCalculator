@@ -40,7 +40,7 @@ public class SubtractTest extends TestCase {
             fail("Should have thrown insufficient number of operands exception");
         } catch (RPNCalculatorInsufficientOperands insufficientOperands) {
             insufficientOperands.printStackTrace();
-            assertEquals("SUBTRACT requires at least 2 operands", insufficientOperands.getMessage());
+            assertEquals("SUBTRACT requires 2 operands", insufficientOperands.getMessage());
         }
     }
 
